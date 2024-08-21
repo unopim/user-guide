@@ -2,7 +2,7 @@
 
 By using Attribute Families, you can import all the required information about the product in a single step. It can be specified as a list of attributes that are related to a unique product. Here we have listed out the tutorial on product attribute families in UnoPim.
 
-### Create Attribute Family in Bagisto 2.2.0
+### Create Attribute Family in UnoPim
 
 **Step 1**:- On the Admin Dashboard, click **Catalog** >> **Attribute Families** >> **Create Attribute Family**
 

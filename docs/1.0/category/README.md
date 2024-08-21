@@ -15,7 +15,7 @@ These categories make it easier for shoppers to find and explore products of int
 
 ### Root Category
 
-Bagisto comes with a default root category i.e. Root, but you can also create your root category. Root Category is not visible on the front end because it acts as a container to contain the categories to be displayed on the website.
+UnoPim comes with a default root category i.e. Root, but you can also create your root category. Root Category is not visible on the front end because it acts as a container to contain the categories to be displayed on the website.
 
 ### Sub Category 
 
