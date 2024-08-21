@@ -9,9 +9,9 @@
     "docs:eject": "vuepress eject docs"
   },
   "keywords": [
-    "bagisto",
-    "developer",
-    "documentation"
+    "unopim",
+    "user",
+    "guide"
   ],
   "author": "UnoPim",
   "license": "MIT",
