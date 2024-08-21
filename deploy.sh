@@ -14,6 +14,6 @@ echo 'docs.unopim.com' > CNAME
 git init
 git add -A
 git commit -m 'chore: deploy docs to GitHub'
-git push -f git@github.com:unopim/user-guide.git main:gh-pages
+git push -f git@github.com:unopim/user-guide.git master:gh-pages
 
 cd -
