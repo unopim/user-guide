@@ -2,7 +2,7 @@ module.exports = {
     base: '/',
     port: '8080',
     cache: false,
-    title: 'UnoPim User Guide',
+    title: 'User Guide',
     description: 'Unlock the full potential of UnoPim with our comprehensive user guide. Master data enrichment and streamline your information management effortlessly.',
     head: [
         ['link', { rel: "icon", type: "image/png", href: "/favicon.ico" }],
@@ -10,11 +10,10 @@ module.exports = {
         ['script', {}, `
             (function() {
                 var script = document.createElement('script');
-                script.innerHTML = 'window.chatbotConfig = { url: "https://ask.bagisto.com:5001/chat", logoUrl: "https://docs.krayincrm.com/logoBot.png" };';
+                script.innerHTML = 'window.chatbotConfig = { url: "https://ask.unopim.com:5001/chat", logoUrl: "https://docs.unopim.com/logoBot.png" };';
                 document.head.appendChild(script);
             })();
         `],
-        // ['script', { src: 'https://vikastiwari-webkul.github.io/ai-chatbot/chatbot.js', async: true }]
     ],
     themeConfig: {
         smoothScroll: true,

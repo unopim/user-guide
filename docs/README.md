@@ -1,13 +1,13 @@
 ---
 home: true
 heroText: UnoPim User Guide 
-tagline: A Comprehensive User Guide to Seamlessly Navigate UnoPim.
+tagline: A Comprehensive User Guide for Seamless Navigation of UnoPim.
 actionText: Get Started →
 actionLink: /1.0/introduction/
 
 features:
 - title: Products and Categories
-  details: Learn how to create Products and manage Categories for UnoPim.
+  details: Learn How to Create Products and Manage Categories in UnoPim.
 
 - title: Users and Roles
   details: Learn how to create and manage Users and Roles for UnoPim.  
