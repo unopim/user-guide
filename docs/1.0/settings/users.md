@@ -1,6 +1,6 @@
 # Users
 
-Access Control List Rules in UnoPim allow the store owner to create the user and provide roles for every user. Here will discuss how to create Users in UnoPim.
+It refer to the individuals who interact with the system, including roles such as product managers, content creators, marketers, and administrators, each with specific permissions and access levels for managing and maintaining product data.
 
 ### Steps to create Users in UnoPim
 

@@ -8,12 +8,12 @@ Product Attributes are a set of characteristics that define a particular product
 |-----------------|------------------------------------------------------------------------------------------------------------------------------------|
 | Text      | A single-line input field for text.                                                                            |
 | Text Area   | A multiple-line input field for entering paragraphs of text, such as a product description.                                                                    |
-| Price         | This input type is used to create price fields that are in addition to the predefined attributes: Price, Special Price, Tier Price, and Cost.                                                               |
-| Boolean    | Displays a drop-down list with pre-defined options of Yes and No.                                                                 |
-| Select        | Displays an option to select a value.                       |
+| Boolean    | Displays a switch to toggle between Yes and No.                                                                 |
+| Select        | Displays a dropdown list of values that accepts a single selection of value                      |
 | Multi Select        | Displays a drop-down list of values that accepts multiple selections.                                                                            |
 | Date       | Displays a date value in the preferred format.
 | Date Time       | Displays a date and time value in the preferred format and time zone.
-| Image     | This is used to show the image.The image attribute can be excluded from the storefront media browser.
-| File       | File attributes are a type of meta-data that describe and may modify how files and/or directories in a filesystem behave.
+| Image     | This is used to show the image.
+| File       | File attributes refers to a specific type of attributes that allows you to associate files with the product.
 | Checkbox       | It represents a state or option that can be toggled.
+|Price | This input type is used to create price fields that are in addition to the predefined attributes: Prices.

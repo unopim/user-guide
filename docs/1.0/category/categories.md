@@ -1,10 +1,12 @@
-# How to Create Categories in UnoPim
+# Categories 
 
-The category is a structure of your catalog. By creating a category, customers can easily find the specific product amongst the lot on your e-commerce website. It is used for making the hierarchical arrangement of your website. Here we have listed down steps to create a new category and root category in UnoPim.
+The category is a structure of your catalog. By creating a category, customers can easily find the specific product. It is used for making the hierarchical arrangement. 
+
+Here we have listed down steps to create a new category in UnoPim.
 
 ### Root Category
 
-[UnoPim](https://unopim.com/) comes with a default root category, i.e., Root,  The Root Category is not visible on the front end because it acts as a container to contain the categories to be displayed on the website.
+[UnoPim](https://unopim.com/) comes with a default root category. Root category acts as a container to contain the sub categories.
 
 ### Steps to Create a New Category in UnoPim
 
@@ -12,7 +14,7 @@ The category is a structure of your catalog. By creating a category, customers c
 
    ![Create Category](../../assets/1.0/images/category/create.png)
 
-2. Enter the general values like Code, Name, Description, also click on root if you need to assign your sub category into the root category.
+2. Enter the general values like **Code, Name & Description**. You can also assign your subcategory to a parent category, such as root if needed. 
 
    ![Save Category](../../assets/1.0/images/category/saveCategory.png)
 

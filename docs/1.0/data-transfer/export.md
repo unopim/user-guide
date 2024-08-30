@@ -14,7 +14,7 @@ Exporting data to save information in files is a common practice for data manage
 
 2) **Type -** Kindly select the type i.e. (Products, Categories) which you want to Export.
 
-3) **Field Separator –** This feature allows you to set the fields. 
+3) **Field Separator –** This feature allows you to set the fields. For Example if you use **","** as a field separator then the data inside the file gets separated with this.
 
 4) **Filters -** Select the format of the file **(CSV, XLS, XLSX)** as per your requiremnts from the dropdown.
 
@@ -28,11 +28,7 @@ Now, click on **Save Export** button
 
    ![Export Now](../../assets/1.0/images/data-transfer/exportNow.png)
 
-**Step 4:** Now click on **Data Transfer >> Job Tracker** where you see the status of your export process. After the status got completed then the export process is been done successfully.
-
-Also you can run the below command in the root of your UnoPim.
-
-**php artisan queue:listen**
+**Step 4:** Now click on **Data Transfer >> Job Tracker** where you see the status of your export process. After the status shows completed then the export process has been completed successfully.
 
 Now click on action to view you export data as shown in the below image.
 

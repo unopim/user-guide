@@ -26,7 +26,7 @@ module.exports = [
         ])
     },
    
-    [setVersionPrefix('category/categories'), 'Category'],
+    [setVersionPrefix('category/categories'), 'Categories'],
 
     [setVersionPrefix('categoryField/category-fields'), 'Category Fields'],
 
@@ -38,6 +38,7 @@ module.exports = [
             ['attribute/attribute-input', 'Attribute Input Type'],
             ['attribute/product-attribute', 'Create Product Attribute'],
             ['attribute/attribute-family', 'Attribute Family'],
+            ['attribute/attribute-groups', 'Attribute Groups'],
         ])
     },
 

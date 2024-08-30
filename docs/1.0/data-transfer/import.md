@@ -6,7 +6,7 @@ The feature works differently for each system and has a vast variety of use case
 
 ### Steps to add Bulk Import in UnoPim
 
-**Step 1:** Go to the Admin panel of UnoPim click on Data Transfer >> Imports and click on Create Import button.
+**Step 1:** Go to the Admin panel of UnoPim click on **Data Transfer >> Imports >> Create Import**.
 
    ![Create Import](../../assets/1.0/images/data-transfer/createImport.png)
 
@@ -16,11 +16,11 @@ The feature works differently for each system and has a vast variety of use case
 
 2) **Type -** Kindly select the type i.e. (Products, Categories) which you want to import.
 
-3) **File –** Choose the file in your desired format (CSV, XLS, XLSX) and kindly make sure you have all the required fields in the file.
+3) **File –** Choose the file in your desired format **(CSV, XLS, XLSX)** and kindly make sure you have all the required fields in the file.
 
 4) **Download Sample –** You can also download the sample files of types (Products, Categories). Kindly make sure the file you are uploading is similar to this sample file.
 
-5) **Image Directory Path –** Use relative path to /project-root/storage/import/app, e.g. product-images, import-images.
+5) **Image Directory Path –** For product images files should be placed into **/project-root/storage/app/import/product-images** folder.
 
 6) **Action –** Kindly select from the settings configuration that you want to Create/Update or Delete the records.
 
@@ -28,7 +28,9 @@ The feature works differently for each system and has a vast variety of use case
 
 8) **Allowed Errors –** This feature allows you how much quantity of errors will get neglected while importing the data.
 
-9) **Field Separator –** This feature allows you to set the fields. Now, click on **Save Import** button. 
+9) **Field Separator –** This feature allows you to set the fields. For Example if you use **","** as a field separator then the data inside the file gets separated with this.
+
+Now, click on **Save Import** button.  
 
    ![Save Import](../../assets/1.0/images/data-transfer/saveImport.png)
 

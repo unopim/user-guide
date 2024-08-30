@@ -1,21 +1,13 @@
 # Product types
 
-**TOPICS:** Inventory, Products
+### Simple Product
 
-**CREATED FOR:**
-- Beginner
-- Intermediate
-- Admin
-- Leader
-- User
+A simple product is the most basic and common product type. It's a physical, unique, standalone product without any other variations. 
 
-Inventory Management supports inventory and order management for all product types in [UnoPim](https://unopim.com/): simple and configurable. Options and requirements may differ per product type for sources, stocks, and shipping.
+Simple products offer customizable options within a single SKU.
 
-Single-source merchants create and update product settings and quantities without requiring additional updates. All created and newly imported products automatically assign to the Default Source and Default Stock, immediately available to customers if enabled and In-Stock.
+### Configurable Product
 
-Multi-source merchants assign sources, quantities per source, and settings during or after product creation. Commerce assigns all newly imported products to the Default Source, requiring additional edits to assign sources and quantities.
+It refers to a type of product that offers various options or variations, such as size, color, or features, which can be selected by the customer. 
 
-| Product Type   | Shipping and Source Selection Algorithm                                                                                          |
-|-----------------|------------------------------------------------------------------------------------------------------------------------------------|
-| Simple          | Supports SSA recommendations and overrides at shipping.                                                                            |
-| Configurable    | Supports SSA recommendations and overrides at shipping.                                                                            |
+The UnoPim system manages these options and their associated attributes, ensuring accurate and comprehensive product information across different configurations.
