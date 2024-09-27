@@ -14,7 +14,7 @@ Here we have explained the steps to set Locales in UnoPim.
 
 **1.Code** Every language has its unique code.
 
-**2.Name** Name of the language.
+**2.Status** Enable the status of the locale.
 
 ![New Locale](../../assets/1.0/images/settings/newLocale.png)
 
@@ -22,7 +22,7 @@ Here we have explained the steps to set Locales in UnoPim.
 
 ![Grid](../../assets/1.0/images/settings/grid.png)
 
-**Step 4:** On the admin panel open **Settings >> Channels** You will able to see your new language is situated in the currencies and Locales section to enable this click on that and **Save Channel** as shown in the below image.
+**Step 4:** On the admin panel open **Settings >> Channels** you will able to see your new language is visible in the Currencies and Locales section to enable this select your local and then click on **Save Channel** as shown in the below image.
 
 ![Channel](../../assets/1.0/images/settings/channel.png)
 

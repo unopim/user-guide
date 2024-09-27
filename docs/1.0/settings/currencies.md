@@ -8,7 +8,7 @@ Currencies in UnoPim refer to the different monetary systems used to manage and 
 
  ![Currency](../../assets/1.0/images/settings/createCurrency.png)
 
-**Step 2:** Now Enter **Code, Name, Symbol, Decimal** then enable the **Status** and click on **Save Currency** button as shown in below image.
+**Step 2:** Now Enter **Code, Symbol, Decimal** then enable the **Status** and click on **Save Currency** button as shown in below image.
 
  ![Save Currency](../../assets/1.0/images/settings/saveCurrency.png)
 
@@ -16,7 +16,7 @@ Currencies in UnoPim refer to the different monetary systems used to manage and 
 
  ![Currency Grid](../../assets/1.0/images/settings/currencyGrid.png)
 
-**Step 4:** On the admin panel click on **Settings >> Channels** you will able to see the Currency section and your new currency right there.
+**Step 4:** On the admin panel click on **Settings >> Channels** you will able to see your new currency get visible in the currencies section.
 
 Once the channel setting has been done click on **Save Channel** as shown in the below image.
 
