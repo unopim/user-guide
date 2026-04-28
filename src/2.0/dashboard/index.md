@@ -2,48 +2,23 @@
 
 The **Dashboard** is the landing page you see immediately after logging in to [UnoPim](https://unopim.com/). It's designed as a single-screen command center: in under a second you should be able to tell *how big* your catalog is, *how healthy* it is, *what your team has been doing*, and *what needs attention next* — without clicking into any other page.
 
-<ImagePopup src="/assets/2.0/images/dashboard/dashboard-overview.png" alt="Dashboard Overview" />
+## How the Dashboard is organised
 
-## What is the Dashboard for?
+The Dashboard is split into **three vertical bands**, each answering a different question:
 
-The Dashboard exists to answer four questions the moment you log in:
+| Band | Question it answers | What's in it |
+|---|---|---|
+| **1. Overview** | *How big is my catalog and what needs attention right now?* | Welcome banner, Catalog Overview cards, Catalog Structure cards, Needs Attention alerts |
+| **2. Analytics** | *How healthy is my data?* | Product Statistics, Product Activity chart, Completeness, Channel Readiness |
+| **3. Operations** | *What has the team been doing?* | Recent Activity feed, Data Transfer panel |
 
-| Question | Where the answer lives |
-|---|---|
-| **How big is my catalog?** | Catalog Overview + Catalog Structure cards |
-| **How healthy is my data?** | Needs Attention, Completeness, Channel Readiness |
-| **What has the team been doing?** | Product Statistics, Product Activity chart, Recent Activity |
-| **What do I do next?** | Welcome Banner quick actions, Needs Attention alerts, Data Transfer panel |
+Counts and charts are computed on page load (no scheduled jobs), so the Dashboard always reflects the current state of the database. The rest of this page walks through the three bands, explains every widget, and shows the corresponding screenshot.
 
-It's deliberately read-heavy — the Dashboard reports state, then points you at the right page to act. Every card and panel is either clickable (to jump to the relevant listing) or paired with a quick-action button.
+---
 
-## How the Dashboard works
+## 1. Overview
 
-The page is composed of independent **widgets**, each sourced from a different part of UnoPim:
-
-```
-┌───────────────────────────────────────────────────┐
-│ Welcome Banner   (user greeting + quick actions)  │
-├───────────────────────────────────────────────────┤
-│ Catalog Overview   ← products + categories tables │
-│ Catalog Structure  ← attributes, locales, channels│
-├───────────────────────────────────────────────────┤
-│ Needs Attention    ← completeness engine          │
-├───────────────────────────────────────────────────┤
-│ Analytics          ← product stats + 7-day chart  │
-│ Completeness       ← per-channel completeness     │
-│ Channel Readiness  ← per-channel ready counts     │
-├───────────────────────────────────────────────────┤
-│ Operations         ← activity log + Job Tracker   │
-├───────────────────────────────────────────────────┤
-│ AI Agent button (floating, bottom-right)          │
-│ Theme toggle (top-right, next to bell)            │
-└───────────────────────────────────────────────────┘
-```
-
-Counts and charts are computed on page load (no scheduled jobs), so the Dashboard always reflects the current state of the database.
-
-## Widgets
+The Overview band is the first thing you see after login. It greets you, summarises the size of the catalog, exposes the structural building blocks, and surfaces any items that need attention right now.
 
 ### Welcome Banner
 
@@ -87,9 +62,15 @@ Surfaces items that need admin action **right now**. The most common alert is **
 Unenriched products may not be ready for distribution to your sales channels. Review this section regularly to keep the catalog shippable.
 :::
 
-### Analytics
+<ImagePopup src="/assets/2.0/images/dashboard/dashboard-overview.png" alt="Dashboard Overview band — Welcome banner, Catalog Overview, Catalog Structure, Needs Attention" />
 
-#### Product Statistics
+---
+
+## 2. Analytics
+
+The Analytics band answers *how healthy is my data?*. It shows the size and shape of the catalog over time, plus the per-channel completeness picture so you can decide where to focus enrichment work.
+
+### Product Statistics
 
 A numerical breakdown of the catalog — the quickest way to judge health over time.
 
@@ -103,7 +84,7 @@ A numerical breakdown of the catalog — the quickest way to judge health over t
 | **Avg Completeness** | Average completeness score across all products. |
 | **Enriched** | Number of products flagged as fully enriched. |
 
-#### Product Activity (Last 7 Days)
+### Product Activity (Last 7 Days)
 
 A two-line chart plotting **Created** vs. **Updated** products per day for the last seven days. Flat lines at zero are a cue that the catalog has gone quiet; spikes usually mean a bulk import or enrichment run just finished.
 
@@ -128,40 +109,54 @@ Work on the lowest-scoring channel-locale pair first. A product can be ready for
 
 ### Channel Readiness
 
-A horizontal **progress bar per channel** reading *"X of Y products ready"* with a percentage (e.g., *"2 of 3 products ready — 67%"*). Where the Completeness widget shows *average quality*, Channel Readiness shows *shippable count* — the number of products that clear that channel's required-field bar.
+A horizontal **progress bar per channel** reading *"X of Y products ready"* with a percentage (e.g., *"1 of 12 products ready — 8%"*). Where the Completeness widget shows *average quality*, Channel Readiness shows *shippable count* — the number of products that clear that channel's required-field bar.
 
-### Operations
+<ImagePopup src="/assets/2.0/images/dashboard/dashboard-analytics.png" alt="Dashboard Analytics band — Product Statistics, Product Activity chart, Completeness, Channel Readiness" />
 
-#### Recent Activity
+---
+
+## 3. Operations
+
+The Operations band sits at the bottom of the Dashboard and answers *what has the team been doing?*. It pairs a chronological activity feed with the latest import / export job statuses so you can spot anomalies at a glance.
+
+### Recent Activity
 
 A chronological feed of changes across the system. Every entry captures:
 
 | Field | Meaning |
 |---|---|
 | **Action type** | Created, updated, or deleted. |
-| **Entity type** | Family, Attribute, Product, Category, Channel, etc. |
+| **Entity type** | Family, Attribute, Product, Category, Channel, Job, etc. |
 | **User name** | Who performed the action. |
 | **Timestamp** | When it happened. |
 
 This is the fastest way to answer *"did someone change X recently?"* without opening the history tab on each entity.
 
-#### Data Transfer
+### Data Transfer
 
-Status panel for your most recent import and export jobs. Each job shows one of five states:
+Status panel for your most recent import and export jobs. Each row shows the profile code, type (Import / Export / System), rows processed, and one of five states:
 
 | Status | Meaning |
 |---|---|
 | **Completed** | The job finished successfully. |
+| **Validated** | The job passed validation but hasn't been imported yet. |
 | **Processing** | The job is currently running. |
 | **Pending** | The job is queued and waiting to start. |
 | **Failed** | The job encountered errors. |
-| **Cancelled** | The job was manually cancelled. |
 
-Click **"View All Jobs"** to open the full **Job Tracker** with per-step progress bars and pause/resume/cancel controls.
+Click **"View All Jobs"** at the bottom of the panel to open the full **Job Tracker** with per-step progress bars and pause / resume / cancel controls.
+
+<ImagePopup src="/assets/2.0/images/dashboard/dashboard-operations.png" alt="Dashboard Operations band — Recent Activity feed and Data Transfer panel" />
+
+---
+
+## Always-on controls
+
+Two controls live on the Dashboard chrome (and every other admin page) rather than inside one of the three bands.
 
 ### AI Agent
 
-A floating **"Open Agenting PIM"** button sits in the bottom-right corner of the Dashboard (and every other admin page). Clicking it opens the conversational AI Agent — type what you need in plain English and it calls the right PIM tool on your behalf.
+A floating **"Open Agentic PIM"** button sits in the bottom-right corner. Clicking it opens the conversational AI Agent — type what you need in plain English and it calls the right PIM tool on your behalf.
 
 ::: tip
 The AI Agent can create products, enrich content, run data-quality scans, and answer questions about your catalog without you navigating the sidebar. See **[AI Agent Chat](../ai-agent/ai-agent-chat.md)** for the full list of 30+ tools.
@@ -177,14 +172,16 @@ UnoPim supports a **Dark / Light Theme** toggle. Click the sun/moon icon in the 
 The theme toggle is global. Whichever mode you choose applies everywhere in the admin, not just the Dashboard.
 :::
 
+---
+
 ## Typical Dashboard workflow
 
 A common way admins use the Dashboard at the start of a shift:
 
-1. **Check Needs Attention** — clear any urgent alerts (e.g., unenriched products).
-2. **Scan Completeness and Channel Readiness** — pick the weakest channel/locale and plan a cleanup.
-3. **Skim Recent Activity** — confirm overnight jobs finished and teammates' changes make sense.
-4. **Open Data Transfer** — watch any running imports/exports, or click through to the Job Tracker for detail.
+1. **Check Needs Attention** (Overview band) — clear any urgent alerts (e.g., unenriched products).
+2. **Scan Completeness and Channel Readiness** (Analytics band) — pick the weakest channel/locale and plan a cleanup.
+3. **Skim Recent Activity** (Operations band) — confirm overnight jobs finished and teammates' changes make sense.
+4. **Open Data Transfer** (Operations band) — watch any running imports/exports, or click through to the Job Tracker for detail.
 5. **Launch work** — use a Welcome Banner quick action or the AI Agent button to start the day's tasks.
 
 Following this flow turns the Dashboard into a daily triage screen rather than just a landing page.

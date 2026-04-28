@@ -67,12 +67,38 @@ export default [
     text: 'Magic AI',
     link: `/${version}/magic/magic-ai`,
     collapsed: false,
-    items: setVersionPrefix([
-      ['magic-ai/platforms', 'Platforms'],
-      ['magic-ai/settings', 'Settings'],
-      ['magic-ai/prompts', 'Prompts'],
-      ['magic-ai/system-prompts', 'System Prompts'],
-    ])
+    items: [
+      {
+        text: 'Platforms',
+        link: `/${version}/magic-ai/platforms`,
+        collapsed: true,
+        items: [
+          {
+            text: 'Providers',
+            link: `/${version}/magic-ai/providers/`,
+            collapsed: true,
+            items: setVersionPrefix([
+              ['magic-ai/providers/openai', 'OpenAI'],
+              ['magic-ai/providers/anthropic', 'Anthropic'],
+              ['magic-ai/providers/gemini', 'Google Gemini'],
+              ['magic-ai/providers/groq', 'Groq'],
+              ['magic-ai/providers/ollama', 'Ollama'],
+              ['magic-ai/providers/xai', 'xAI (Grok)'],
+              ['magic-ai/providers/mistral', 'Mistral'],
+              ['magic-ai/providers/deepseek', 'DeepSeek'],
+              ['magic-ai/providers/azure', 'Azure OpenAI'],
+              ['magic-ai/providers/openrouter', 'OpenRouter'],
+              ['magic-ai/providers/custom', 'Custom (OpenAI-compatible)'],
+            ])
+          }
+        ]
+      },
+      ...setVersionPrefix([
+        ['magic-ai/settings', 'Settings'],
+        ['magic-ai/prompts', 'Prompts'],
+        ['magic-ai/system-prompts', 'System Prompts'],
+      ]),
+    ]
   },
 
   {
