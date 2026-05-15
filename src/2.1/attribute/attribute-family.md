@@ -1,0 +1,29 @@
+# Attribute Family
+
+By using Attribute Families, you can import all the required information about the product in a single step.
+
+It can be specified as a list of attributes that are related to a unique product. Here we have listed out the tutorial on product attribute families in UnoPim.
+
+### Create Attribute Family in UnoPim
+
+**Step 1**:- On the Admin Dashboard, click **Catalog** → **Attribute Families** → **Create Attribute Family**
+
+ <ImagePopup src="/assets/2.1/images/attributes/createFamily.png" alt="Attribute Family" />
+
+**Step 2**:- Now assign the attribute to your new attribute family from the Unassigned Attributes by dragging and dropping it according to your requirements.
+
+Then, enter the **Attribute Family Code** and **Name** as shown in the below image.
+
+ <ImagePopup src="/assets/2.1/images/attributes/saveFamily.png" alt="Attribute Family" />
+
+At last, click on **Save Attribute Family** button.
+
+So now after creating a family the New Attribute Family is visible on the attribute family datagrid as shown in the below image.
+
+ <ImagePopup src="/assets/2.1/images/attributes/new.png" alt="Attribute Family" />
+
+Afterward, to verify the output during the product creation process, you will be able to see the new Attribute family. Now all Attribute will be visible on the product page that belongs to these Attribute Families.
+
+ <ImagePopup src="/assets/2.1/images/attributes/familyOutput.png" alt="Attribute Family" />
+
+By following the above steps, you can easily create an **Attribute Families** in UnoPim.

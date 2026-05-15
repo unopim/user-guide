@@ -2,6 +2,7 @@
 import { defineConfig } from 'vitepress'
 import v10 from './version-configs/1.0'
 import v20 from './version-configs/2.0'
+import v21 from './version-configs/2.1'
 
 export default defineConfig({
   base: '/',
@@ -50,12 +51,14 @@ export default defineConfig({
 
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Dev Doc', link: 'https://devdocs.unopim.com/' }
+      { text: 'Dev Doc', link: 'https://devdocs.unopim.com/' },
+      { text: 'Extensions Doc', link: 'https://docs-extensions.unopim.com/' },
     ],
 
     sidebar: {
       '/1.0/': v10,
-      '/2.0/': v20
+      '/2.0/': v20,
+      '/2.1/': v21
     },
 
     editLink: {

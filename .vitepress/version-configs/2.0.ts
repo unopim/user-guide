@@ -105,7 +105,7 @@ export default [
     collapsed: false,
     items: setVersionPrefix([
       ['configuration/integration', 'Integration'],
-      ['settings/webhooks', 'Webhooks'],
+      ['configuration/webhooks', 'Webhooks'],
     ])
   },
 

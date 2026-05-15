@@ -15,27 +15,29 @@ import { useRoute, useRouter } from 'vitepress'
 import { computed } from 'vue'
 
 const versions = [
+  { label: 'v2.1', value: '2.1' },
   { label: 'v2.0', value: '2.0' },
   { label: 'v1.0', value: '1.0' }
 ]
+
+const versionRegex = /^\/(1\.0|2\.0|2\.1)(\/.*)?$/
 
 const route = useRoute()
 const router = useRouter()
 
 const currentVersion = computed(() => {
-  const match = route.path.match(/^\/(1\.0|2\.0)(\/.*)?$/)
-  return match ? match[1] : '2.0'
+  const match = route.path.match(versionRegex)
+  return match ? match[1] : '2.1'
 })
 
 const restPath = computed(() => {
-  const match = route.path.match(/^\/(1\.0|2\.0)(\/.*)?$/)
-  return match && match[2] ? match[2] : '/'
+  const match = route.path.match(versionRegex)
+  return match && match[2] && match[2] !== '/' ? match[2] : '/introduction/'
 })
 
 function onChange(e: Event) {
   const newVersion = (e.target as HTMLSelectElement).value
-  const newPath = `/${newVersion}${restPath.value}`
-  router.go(newPath)
+  router.go(`/${newVersion}${restPath.value}`)
 }
 </script>
 

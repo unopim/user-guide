@@ -1,6 +1,6 @@
-# Categories 
+# Categories
 
-The category is a structure of your catalog. By creating a category, customers can easily find the specific product. It is used for making the hierarchical arrangement. 
+The category is a structure of your catalog. By creating a category, customers can easily find the specific product. It is used for making the hierarchical arrangement.
 
 Here we have listed down steps to create a new category in UnoPim.
 
@@ -14,7 +14,7 @@ Here we have listed down steps to create a new category in UnoPim.
 
    <ImagePopup src="/assets/1.0/images/category/create.png" alt="Create Category" />
 
-2. Enter the general values like **Code, Name & Description**. You can also assign your subcategory to a parent category, such as root if needed. 
+2. Enter the general values like **Code, Name & Description**. You can also assign your subcategory to a parent category, such as root if needed.
 
    <ImagePopup src="/assets/1.0/images/category/saveCategory.png" alt="Save Category" />
 

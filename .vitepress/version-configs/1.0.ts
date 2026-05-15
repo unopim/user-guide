@@ -77,6 +77,7 @@ export default [
     items: setVersionPrefix([
       ['configuration/integration', 'Integration'],
       ['configuration/magic-ai', 'Magic AI'],
+      ["configuration/webhooks", "Webhooks"],
     ])
   },
 
