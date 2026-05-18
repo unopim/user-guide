@@ -19,5 +19,5 @@ The UnoPim system manages these options and their associated attributes, ensurin
 In addition to product creation, UnoPim offers powerful tools to manage your catalog efficiently:
 
 - **[Product Completeness](./completeness)**: Measure and improve data quality.
-- **[Product Bulk Edit](./bulk-edit)**: Update multiple products at once.
-- **[Dynamic Product Datagrid](./datagrid)**: Customize your grid with dynamic columns and filters.
+- **Product Bulk Edit**: Update multiple products at once.
+- **Dynamic Product Datagrid**: Customize your grid with dynamic columns and filters.
