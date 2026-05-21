@@ -1,0 +1,39 @@
+# Grupy atrybutów 
+
+Grupy atrybutów służą do łączenia atrybutów w celu zapewnienia większej widoczności podczas wypełniania wartości przez użytkowników.
+
+Organizują pracę różnych współtwórców na produktach.
+
+### Kroki tworzenia grup atrybutów w UnoPim
+
+**Krok 1-**  Na Dashboardzie administratora kliknij **Katalog** >> **Attribute Groups** >> **Create Attribute Groups**, jak pokazano poniżej.
+
+ <ImagePopup src="/assets/1.0/images/attributes/createGroups.png" alt="Grupy atrybutów" />
+
+**Krok 2-** Teraz dodaj **Code** i **Label** grupy, a następnie kliknij **Save Attribute Group**, jak pokazano na poniższym obrazku.
+
+ <ImagePopup src="/assets/1.0/images/attributes/editGroup.png" alt="Grupy atrybutów" />
+
+Tak utworzona została **Nowa grupa atrybutów**, jak pokazano na poniższym obrazku.
+
+ <ImagePopup src="/assets/1.0/images/attributes/groupGrid.png" alt="Tabela grup atrybutów" />
+
+**Krok 3-** Aby przypisać tę grupę, kliknij **Katalog >> Attribute Families >> Edit Default Attribute Family** i kliknij **Assign Attribute Group**, jak pokazano na poniższym obrazku.
+
+ <ImagePopup src="/assets/1.0/images/attributes/assignGroup.png" alt="Tabela grup atrybutów" />
+
+**Krok 4-** Teraz wybierz grupę i kliknij przycisk **Assign Attribute Group**, jak pokazano poniżej.
+
+ <ImagePopup src="/assets/1.0/images/attributes/newGroup.png" alt="Tabela grup atrybutów" />
+
+Nowa grupa została pomyślnie utworzona w głównej treści.
+
+ <ImagePopup src="/assets/1.0/images/attributes/groupOutput.png" alt="Tabela grup atrybutów" />
+
+Na Dashboardzie administratora kliknij **Katalog >> Products >> Create Product**.
+
+Teraz grupa pojawi się automatycznie w Twoim formularzu produktu. Jeśli produkt ma co najmniej jeden atrybut w tej grupie.
+
+ <ImagePopup src="/assets/1.0/images/attributes/outputGroup.png" alt="Tabela grup atrybutów" />
+
+

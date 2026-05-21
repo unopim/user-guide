@@ -232,34 +232,22 @@
   color: #fff; /* White text on hover */
 }
 
-/* Grouped navbar icons (GitHub + Google Translate) */
-.vp-nav-icons {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  margin-left: 8px;
-  padding-left: 12px;
-  border-left: 1px solid var(--vp-c-divider);
-  height: 24px;
+/* Show the navbar bottom divider only on pages inside a versioned
+   section (where a sidebar with sections is rendered, e.g. /2.1/...).
+   Hide it on home / landing pages for a clean header. */
+body:has(.VPContent.is-home) .VPNavBar .divider {
+  display: none !important;
 }
 
-.vp-nav-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  color: var(--vp-c-text-2);
-  text-decoration: none;
-  transition: background-color 0.15s ease, color 0.15s ease;
+/* Hide the root "Languages" entry from the language picker dropdown.
+   Root locale serves only `/` (a landing page), so VitePress generates
+   a broken cross-link to `/<version>/<page>/` for it — which 404s. The
+   real locales prefix every link with `/en/`, `/de/` etc. */
+.VPMenu .VPMenuLink:has(> a[href^="/1.0/"]),
+.VPMenu .VPMenuLink:has(> a[href^="/2.0/"]),
+.VPMenu .VPMenuLink:has(> a[href^="/2.1/"]),
+.VPMenu .VPMenuLink:has(> a[href="/"]) {
+  display: none !important;
 }
 
-.vp-nav-icon:hover {
-  background-color: var(--vp-c-default-soft);
-  color: var(--vp-c-brand);
-}
 
-.vp-nav-icon--translate {
-  padding: 0;
-}
