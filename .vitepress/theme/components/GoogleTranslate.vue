@@ -31,7 +31,8 @@
     <Transition name="vp-gt-fade">
       <div
         v-if="open"
-        class="vp-gt-menu"
+        class="vp-gt-menu notranslate"
+        translate="no"
         role="menu"
         aria-label="Translate this page"
       >
@@ -39,11 +40,13 @@
           v-for="lang in languages"
           :key="lang.code"
           role="menuitem"
-          class="vp-gt-menu-item"
+          class="vp-gt-menu-item notranslate"
+          translate="no"
           :class="{ 'is-active': current === lang.code }"
           @click="switchTo(lang.code)"
         >
-          {{ lang.label }}
+          <span class="vp-gt-menu-label">{{ lang.label }}</span>
+          <span class="vp-gt-menu-native">{{ lang.native }}</span>
         </button>
       </div>
     </Transition>
@@ -57,13 +60,15 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 const languages = [
-  { code: 'en',    label: 'English' },
-  { code: 'es',    label: 'Español' },
-  { code: 'fr',    label: 'Français' },
-  { code: 'de',    label: 'Deutsch' },
-  { code: 'nl',    label: 'Nederlands' },
-  { code: 'zh-CN', label: '中文' },
-  { code: 'ja',    label: '日本語' }
+  { code: 'en',    label: 'English',  native: 'English' },
+  { code: 'es',    label: 'Spanish',  native: 'Español' },
+  { code: 'fr',    label: 'French',   native: 'Français' },
+  { code: 'de',    label: 'German',   native: 'Deutsch' },
+  { code: 'it',    label: 'Italian',  native: 'Italiano' },
+  { code: 'nl',    label: 'Dutch',    native: 'Nederlands' },
+  { code: 'pl',    label: 'Polish',   native: 'Polski' },
+  { code: 'zh-CN', label: 'Chinese',  native: '中文' },
+  { code: 'ja',    label: 'Japanese', native: '日本語' }
 ] as const
 
 const open = ref(false)
@@ -104,7 +109,7 @@ function loadGoogleTranslate() {
     new g.translate.TranslateElement(
       {
         pageLanguage: 'en',
-        includedLanguages: 'en,es,fr,de,nl,zh-CN,ja',
+        includedLanguages: 'en,es,fr,de,it,nl,pl,zh-CN,ja',
         layout: g.translate.TranslateElement.InlineLayout.SIMPLE,
         autoDisplay: false,
       },
@@ -254,7 +259,7 @@ const vClickOutside = {
   top: calc(100% + 12px);
   right: 0;
   z-index: 50;
-  min-width: 180px;
+  min-width: 220px;
   padding: 12px;
   background: var(--vp-c-bg-elv);
   border: 1px solid var(--vp-c-divider);
@@ -266,14 +271,16 @@ const vClickOutside = {
 }
 
 .vp-gt-menu-item {
-  display: block;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
   width: 100%;
   padding: 8px 12px;
   border: 0;
   background: transparent;
   border-radius: 6px;
-  font-size: 14px;
-  font-weight: 500;
   font-family: inherit;
   color: var(--vp-c-text-1);
   text-align: left;
@@ -281,12 +288,30 @@ const vClickOutside = {
   transition: color 0.2s, background-color 0.2s;
 }
 
+.vp-gt-menu-label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.vp-gt-menu-native {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--vp-c-text-2);
+}
+
 .vp-gt-menu-item:hover {
   color: var(--vp-c-brand);
   background-color: var(--vp-c-default-soft);
 }
 
-.vp-gt-menu-item.is-active {
+.vp-gt-menu-item:hover .vp-gt-menu-native {
+  color: var(--vp-c-brand);
+}
+
+.vp-gt-menu-item.is-active .vp-gt-menu-label,
+.vp-gt-menu-item.is-active .vp-gt-menu-native {
   color: var(--vp-c-brand);
   font-weight: 600;
 }

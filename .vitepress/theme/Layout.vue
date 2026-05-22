@@ -3,6 +3,7 @@ import { onMounted, onBeforeUnmount } from 'vue'
 import DefaultTheme from 'vitepress/theme'
 import VersionSelect from './components/VersionSelect.vue'
 import GoogleTranslate from './components/GoogleTranslate.vue'
+import VersionBanner from './components/VersionBanner.vue'
 
 const { Layout } = DefaultTheme
 
@@ -40,6 +41,9 @@ onBeforeUnmount(() => {
 
 <template>
   <Layout>
+    <template #doc-before>
+      <VersionBanner />
+    </template>
     <template #nav-bar-content-after>
       <!-- Order: translate → github → version. Translate sits right
            after the theme toggle (theme toggle is the last default
