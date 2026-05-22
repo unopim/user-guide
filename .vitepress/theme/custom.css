@@ -239,15 +239,31 @@ body:has(.VPContent.is-home) .VPNavBar .divider {
   display: none !important;
 }
 
-/* Hide the root "Languages" entry from the language picker dropdown.
-   Root locale serves only `/` (a landing page), so VitePress generates
-   a broken cross-link to `/<version>/<page>/` for it — which 404s. The
-   real locales prefix every link with `/en/`, `/de/` etc. */
-.VPMenu .VPMenuLink:has(> a[href^="/1.0/"]),
-.VPMenu .VPMenuLink:has(> a[href^="/2.0/"]),
-.VPMenu .VPMenuLink:has(> a[href^="/2.1/"]),
-.VPMenu .VPMenuLink:has(> a[href="/"]) {
-  display: none !important;
+/* Vertical separators between the right-side nav items:
+     theme-toggle | translate | github | version
+   VitePress already renders a divider AFTER the theme toggle, so we
+   only inject one before github and before version-select. */
+.vp-gt {
+  margin-left: 10px !important;
 }
 
+.vp-gh-link,
+.vp-version-select {
+  position: relative;
+  margin-left: 10px !important;
+  padding-left: 10px;
+}
+
+.vp-gh-link::before,
+.vp-version-select::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 1px;
+  height: 22px;
+  background-color: var(--vp-c-divider);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
 

@@ -20,16 +20,11 @@ const versions = [
   { label: 'v1.0', value: '1.0' }
 ]
 
-const LOCALES = ['en', 'de', 'fr', 'es', 'nl', 'pl']
-// /[locale?]/[version]/[rest?]
-const versionRegex = new RegExp(
-  `^\\/(?:(${LOCALES.join('|')})\\/)?(1\\.0|2\\.0|2\\.1)(\\/.*)?$`
-)
+const versionRegex = /^\/(1\.0|2\.0|2\.1)(\/.*)?$/
 
 // Top-level sections available in each version. Used to redirect a
 // version switch to that version's introduction when the current
-// section doesn't exist there (e.g. /2.1/dashboard/ → /1.0/ has no
-// dashboard, so go to /1.0/introduction/ instead of 404).
+// section doesn't exist there.
 const SECTIONS: Record<string, Set<string>> = {
   '1.0': new Set([
     'attribute', 'category', 'categoryField', 'configuration',
@@ -47,53 +42,31 @@ const SECTIONS: Record<string, Set<string>> = {
   ])
 }
 
-// Specific sub-paths that don't exist in older versions even when the
-// parent section does. Maps `version → set of restPath prefixes that
-// are absent`. Anything matching falls back to introduction.
-const MISSING_PATHS: Record<string, string[]> = {
-  '1.0': [
-    '/data-transfer/job-tracker',     // job-tracker is v2.0+
-    '/products/completeness'           // exists in 1.0 — keep
-  ].filter(p => p !== '/products/completeness'),
-  '2.0': [],
-  '2.1': []
-}
-
 const route = useRoute()
 const router = useRouter()
 
-// Hide on landing (/) and every locale home (/en/, /de/, ...) — only show
-// once the user is inside a versioned section.
-const localeHomeRegex = new RegExp(`^\\/(?:(${LOCALES.join('|')})\\/)?$`)
-const showSelector = computed(() => !localeHomeRegex.test(route.path))
-
-const localePrefix = computed(() => {
-  const match = route.path.match(versionRegex)
-  return match && match[1] ? `/${match[1]}` : ''
-})
+// Hide on the landing page; only show inside a versioned section.
+const showSelector = computed(() => route.path !== '/')
 
 const currentVersion = computed(() => {
-  const match = route.path.match(versionRegex)
-  return match ? match[2] : '2.1'
+  const m = route.path.match(versionRegex)
+  return m ? m[1] : '2.1'
 })
 
 const restPath = computed(() => {
-  const match = route.path.match(versionRegex)
-  return match && match[3] && match[3] !== '/' ? match[3] : '/introduction/'
+  const m = route.path.match(versionRegex)
+  return m && m[2] && m[2] !== '/' ? m[2] : '/introduction/'
 })
 
 function resolveRestPath(targetVersion: string, rest: string): string {
-  // Strip leading slash, get top section name.
   const trimmed = rest.replace(/^\/+/, '').replace(/\/$/, '')
   const topSection = trimmed.split('/')[0]
   const sections = SECTIONS[targetVersion]
   if (!sections || !sections.has(topSection)) {
     return '/introduction/'
   }
-  // Check for known missing sub-paths inside an otherwise-existing section.
-  const restNormalized = rest.replace(/\/$/, '')
-  const missing = MISSING_PATHS[targetVersion] || []
-  if (missing.some(p => restNormalized === p || restNormalized.startsWith(p + '/'))) {
+  // v1.0 doesn't have data-transfer/job-tracker
+  if (targetVersion === '1.0' && rest.replace(/\/$/, '').startsWith('/data-transfer/job-tracker')) {
     return '/introduction/'
   }
   return rest
@@ -102,7 +75,7 @@ function resolveRestPath(targetVersion: string, rest: string): string {
 function onChange(e: Event) {
   const newVersion = (e.target as HTMLSelectElement).value
   const targetRest = resolveRestPath(newVersion, restPath.value)
-  router.go(`${localePrefix.value}/${newVersion}${targetRest}`)
+  router.go(`/${newVersion}${targetRest}`)
 }
 </script>
 
@@ -126,7 +99,7 @@ function onChange(e: Event) {
   font-size: 1rem;
   cursor: pointer;
   height: 2rem;
-  box-shadow: 0 1px 2px rgba(60,60,60,0.03);
+  box-shadow: 0 1px 2px rgba(60, 60, 60, 0.03);
   transition: border-color 0.2s;
   outline: none;
 }

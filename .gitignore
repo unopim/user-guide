@@ -4,3 +4,9 @@
 node_modules/
 .playwright-mcp
 .claude
+# Tesseract.js downloads language models at runtime — never commit
+*.traineddata
+
+# Stray PNGs at repo root (assets belong under src/public/assets/)
+/home-logo.png
+

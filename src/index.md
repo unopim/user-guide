@@ -1,40 +1,63 @@
 ---
-layout: page
-title: UnoPim User Guide
-sidebar: false
-aside: false
-outline: false
-prev: false
-next: false
-editLink: false
-lastUpdated: false
-head:
-  - - meta
-    - http-equiv: refresh
-      content: "0; url=/en/"
+layout: home
+home: true
+
+hero:
+  name: "UnoPim User Guide"
+  text: "A Comprehensive Guide to Seamless UnoPim Navigation"
+  tagline: "Smarter and faster PIM Experience."
+  actions:
+    - theme: brand
+      text: Get Started →
+      link: /2.1/introduction/
+    - theme: alt
+      text: What’s New?   
+      link: /2.1/releases/
+    - theme: alt
+      text: View on GitHub
+      link: https://github.com/unopim/unopim
+  image:
+    src: /home-logo.png
+    alt: UnoPim
+
+features:
+  - title: AI Agent & Magic AI
+    details: Use the AI Agent Chat with 32+ PIM tools and Magic AI to automate product data enrichment across 10+ providers.
+    icon: 🤖
+    link: /2.1/ai-agent/
+
+  - title: Attributes & Family
+    details: Define and assign attributes and families with swatch types and video support to standardize product information.
+    icon: 🧩
+    link: /2.1/attribute/
+
+  - title: Dashboard
+    details: Get a comprehensive overview with product statistics, activity charts, completeness scores, and channel readiness.
+    icon: 📊
+    link: /2.1/dashboard/
+
+  - title: Import & Export
+    details: Import and export catalog data with drag-and-drop upload, real-time tracking, and pause/resume controls.
+    icon: 🔁
+    link: /2.1/data-transfer/
+
+  - title: Locales and Currencies
+    details: Set up locales and currencies to support multilingual and multi-currency product catalogs with AI-powered translation.
+    icon: 🌍
+    link: /2.1/settings/locale/
+
+  - title: Notifications & Webhooks
+    details: Stay informed with in-app notifications and automate workflows with product update webhooks.
+    icon: 🔔
+    link: /2.1/notifications/
+
+  - title: Products and Categories
+    details: Create and manage product records and category hierarchies with completeness scoring and bulk edit capabilities.
+    icon: 📦
+    link: /2.1/products/
+
+  - title: Users and Roles
+    details: Configure users, roles, and permissions to control access and responsibilities within UnoPim.
+    icon: 👥
+    link: /2.1/settings/roles/
 ---
-
-<script setup>
-import { onMounted } from 'vue'
-
-onMounted(() => {
-  const preferred = (navigator.language || 'en').toLowerCase().slice(0, 2)
-  const supported = ['en', 'de', 'fr', 'es', 'nl', 'pl']
-  const target = supported.includes(preferred) ? preferred : 'en'
-  window.location.replace(`/${target}/`)
-})
-</script>
-
-<div style="max-width: 720px; margin: 6rem auto; text-align: center; padding: 2rem;">
-
-# UnoPim User Guide
-
-Choose a language to continue.
-
-<div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 1.5rem;">
-
-[English](/en/) · [Deutsch](/de/) · [Français](/fr/) · [Español](/es/) · [Nederlands](/nl/) · [Polski](/pl/)
-
-</div>
-
-</div>
