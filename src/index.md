@@ -11,7 +11,7 @@ hero:
       text: Get Started →
       link: /2.1/introduction/
     - theme: alt
-      text: What’s New
+      text: What’s New?   
       link: /2.1/releases/
     - theme: alt
       text: View on GitHub

@@ -232,34 +232,38 @@
   color: #fff; /* White text on hover */
 }
 
-/* Grouped navbar icons (GitHub + Google Translate) */
-.vp-nav-icons {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  margin-left: 8px;
-  padding-left: 12px;
-  border-left: 1px solid var(--vp-c-divider);
-  height: 24px;
+/* Show the navbar bottom divider only on pages inside a versioned
+   section (where a sidebar with sections is rendered, e.g. /2.1/...).
+   Hide it on home / landing pages for a clean header. */
+body:has(.VPContent.is-home) .VPNavBar .divider {
+  display: none !important;
 }
 
-.vp-nav-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  color: var(--vp-c-text-2);
-  text-decoration: none;
-  transition: background-color 0.15s ease, color 0.15s ease;
+/* Vertical separators between the right-side nav items:
+     theme-toggle | translate | github | version
+   VitePress already renders a divider AFTER the theme toggle, so we
+   only inject one before github and before version-select. */
+.vp-gt {
+  margin-left: 10px !important;
 }
 
-.vp-nav-icon:hover {
-  background-color: var(--vp-c-default-soft);
-  color: var(--vp-c-brand);
+.vp-gh-link,
+.vp-version-select {
+  position: relative;
+  margin-left: 10px !important;
+  padding-left: 10px;
 }
 
-.vp-nav-icon--translate {
-  padding: 0;
+.vp-gh-link::before,
+.vp-version-select::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 1px;
+  height: 22px;
+  background-color: var(--vp-c-divider);
+  transform: translateY(-50%);
+  pointer-events: none;
 }
+

@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="route.path !== '/'"
+    v-if="showSelector"
     class="vp-version-select"
   >
     <select @change="onChange" :value="currentVersion">
@@ -22,22 +22,60 @@ const versions = [
 
 const versionRegex = /^\/(1\.0|2\.0|2\.1)(\/.*)?$/
 
+// Top-level sections available in each version. Used to redirect a
+// version switch to that version's introduction when the current
+// section doesn't exist there.
+const SECTIONS: Record<string, Set<string>> = {
+  '1.0': new Set([
+    'attribute', 'category', 'categoryField', 'configuration',
+    'data-transfer', 'introduction', 'magic', 'products', 'settings'
+  ]),
+  '2.0': new Set([
+    'agenticPim', 'ai-agent', 'attribute', 'category', 'categoryField',
+    'configuration', 'dashboard', 'data-transfer', 'introduction',
+    'magic', 'magic-ai', 'notifications', 'products', 'releases', 'settings'
+  ]),
+  '2.1': new Set([
+    'agenticPim', 'ai-agent', 'attribute', 'category', 'categoryField',
+    'configuration', 'dashboard', 'data-transfer', 'introduction',
+    'magic', 'magic-ai', 'notifications', 'products', 'releases', 'settings'
+  ])
+}
+
 const route = useRoute()
 const router = useRouter()
 
+// Hide on the landing page; only show inside a versioned section.
+const showSelector = computed(() => route.path !== '/')
+
 const currentVersion = computed(() => {
-  const match = route.path.match(versionRegex)
-  return match ? match[1] : '2.1'
+  const m = route.path.match(versionRegex)
+  return m ? m[1] : '2.1'
 })
 
 const restPath = computed(() => {
-  const match = route.path.match(versionRegex)
-  return match && match[2] && match[2] !== '/' ? match[2] : '/introduction/'
+  const m = route.path.match(versionRegex)
+  return m && m[2] && m[2] !== '/' ? m[2] : '/introduction/'
 })
+
+function resolveRestPath(targetVersion: string, rest: string): string {
+  const trimmed = rest.replace(/^\/+/, '').replace(/\/$/, '')
+  const topSection = trimmed.split('/')[0]
+  const sections = SECTIONS[targetVersion]
+  if (!sections || !sections.has(topSection)) {
+    return '/introduction/'
+  }
+  // v1.0 doesn't have data-transfer/job-tracker
+  if (targetVersion === '1.0' && rest.replace(/\/$/, '').startsWith('/data-transfer/job-tracker')) {
+    return '/introduction/'
+  }
+  return rest
+}
 
 function onChange(e: Event) {
   const newVersion = (e.target as HTMLSelectElement).value
-  router.go(`/${newVersion}${restPath.value}`)
+  const targetRest = resolveRestPath(newVersion, restPath.value)
+  router.go(`/${newVersion}${targetRest}`)
 }
 </script>
 
@@ -61,7 +99,7 @@ function onChange(e: Event) {
   font-size: 1rem;
   cursor: pointer;
   height: 2rem;
-  box-shadow: 0 1px 2px rgba(60,60,60,0.03);
+  box-shadow: 0 1px 2px rgba(60, 60, 60, 0.03);
   transition: border-color 0.2s;
   outline: none;
 }

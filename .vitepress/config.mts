@@ -1,8 +1,8 @@
-// .vitepress/config.ts
+// .vitepress/config.mts
 import { defineConfig } from 'vitepress'
-import v10 from './version-configs/1.0'
-import v20 from './version-configs/2.0'
-import v21 from './version-configs/2.1'
+import v10 from './sidebars/v1.0'
+import v20 from './sidebars/v2.0'
+import v21 from './sidebars/v2.1'
 
 export default defineConfig({
   base: '/',
@@ -46,13 +46,15 @@ export default defineConfig({
     siteTitle: false,
     logo: {
       light: '/logo.svg',
-      dark: '/dark_logo.svg',
+      dark: '/dark_logo.svg'
     },
 
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Dev Doc', link: 'https://devdocs.unopim.com/' },
       { text: 'Extensions Doc', link: 'https://docs-extensions.unopim.com/' },
+      { text: 'Contact Us', link: 'https://unopim.com/en/contacts/' },
+      { text: 'Contribute', link: 'https://github.com/unopim/unopim' },
     ],
 
     sidebar: {
