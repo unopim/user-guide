@@ -45,8 +45,9 @@
           :class="{ 'is-active': current === lang.code }"
           @click="switchTo(lang.code)"
         >
+          <span class="vp-gt-menu-flag" aria-hidden="true">{{ lang.flag }}</span>
           <span class="vp-gt-menu-label">{{ lang.label }}</span>
-          <span class="vp-gt-menu-native">{{ lang.native }}</span>
+          <span v-if="current === lang.code" class="vp-gt-menu-check" aria-hidden="true">✓</span>
         </button>
       </div>
     </Transition>
@@ -60,15 +61,12 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 const languages = [
-  { code: 'en',    label: 'English',  native: 'English' },
-  { code: 'es',    label: 'Spanish',  native: 'Español' },
-  { code: 'fr',    label: 'French',   native: 'Français' },
-  { code: 'de',    label: 'German',   native: 'Deutsch' },
-  { code: 'it',    label: 'Italian',  native: 'Italiano' },
-  { code: 'nl',    label: 'Dutch',    native: 'Nederlands' },
-  { code: 'pl',    label: 'Polish',   native: 'Polski' },
-  { code: 'zh-CN', label: 'Chinese',  native: '中文' },
-  { code: 'ja',    label: 'Japanese', native: '日本語' }
+  { code: 'en', label: 'English', native: 'English',    flag: '🇺🇸' },
+  { code: 'de', label: 'German',  native: 'Deutsch',    flag: '🇩🇪' },
+  { code: 'fr', label: 'French',  native: 'Français',   flag: '🇫🇷' },
+  { code: 'es', label: 'Spanish', native: 'Español',    flag: '🇪🇸' },
+  { code: 'nl', label: 'Dutch',   native: 'Nederlands', flag: '🇳🇱' },
+  { code: 'pl', label: 'Polish',  native: 'Polski',     flag: '🇵🇱' }
 ] as const
 
 const open = ref(false)
@@ -109,7 +107,7 @@ function loadGoogleTranslate() {
     new g.translate.TranslateElement(
       {
         pageLanguage: 'en',
-        includedLanguages: 'en,es,fr,de,it,nl,pl,zh-CN,ja',
+        includedLanguages: 'en,de,fr,es,nl,pl',
         layout: g.translate.TranslateElement.InlineLayout.SIMPLE,
         autoDisplay: false,
       },
@@ -259,8 +257,8 @@ const vClickOutside = {
   top: calc(100% + 12px);
   right: 0;
   z-index: 50;
-  min-width: 220px;
-  padding: 12px;
+  min-width: 170px;
+  padding: 8px;
   background: var(--vp-c-bg-elv);
   border: 1px solid var(--vp-c-divider);
   border-radius: 12px;
@@ -274,10 +272,9 @@ const vClickOutside = {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  gap: 10px;
   width: 100%;
-  padding: 8px 12px;
+  padding: 8px 10px;
   border: 0;
   background: transparent;
   border-radius: 6px;
@@ -288,17 +285,26 @@ const vClickOutside = {
   transition: color 0.2s, background-color 0.2s;
 }
 
+.vp-gt-menu-flag {
+  font-size: 18px;
+  line-height: 1;
+  flex-shrink: 0;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Twemoji Mozilla", sans-serif;
+}
+
 .vp-gt-menu-label {
   font-size: 14px;
   font-weight: 500;
   line-height: 1.2;
 }
 
-.vp-gt-menu-native {
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 1.2;
-  color: var(--vp-c-text-2);
+.vp-gt-menu-check {
+  margin-left: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--vp-c-brand);
+  flex-shrink: 0;
 }
 
 .vp-gt-menu-item:hover {
@@ -306,14 +312,24 @@ const vClickOutside = {
   background-color: var(--vp-c-default-soft);
 }
 
-.vp-gt-menu-item:hover .vp-gt-menu-native {
-  color: var(--vp-c-brand);
+.vp-gt-menu-item.is-active {
+  background: linear-gradient(135deg, var(--vp-c-brand) 0%, var(--vp-c-brand-dark, #6b46c1) 100%);
+  color: #fff;
 }
 
-.vp-gt-menu-item.is-active .vp-gt-menu-label,
-.vp-gt-menu-item.is-active .vp-gt-menu-native {
-  color: var(--vp-c-brand);
+.vp-gt-menu-item.is-active .vp-gt-menu-label {
+  color: #fff;
   font-weight: 600;
+}
+
+.vp-gt-menu-item.is-active .vp-gt-menu-check {
+  color: #fff;
+}
+
+.vp-gt-menu-item.is-active:hover {
+  background: linear-gradient(135deg, var(--vp-c-brand) 0%, var(--vp-c-brand-dark, #6b46c1) 100%);
+  color: #fff;
+  filter: brightness(1.05);
 }
 
 /* Google's widget injects into this host; hide it entirely. */

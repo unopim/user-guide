@@ -52,7 +52,9 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Dev Doc', link: 'https://devdocs.unopim.com/' },
-      { text: 'Extensions Doc', link: 'https://docs-extensions.unopim.com/' }
+      { text: 'Extensions Doc', link: 'https://docs-extensions.unopim.com/' },
+      { text: 'Contact Us', link: 'https://unopim.com/en/contacts/' },
+      { text: 'Contribute', link: 'https://github.com/unopim/unopim' },
     ],
 
     sidebar: {
@@ -71,9 +73,6 @@ export default defineConfig({
       formatOptions: { dateStyle: 'full' }
     },
 
-    // GitHub icon is rendered manually in Layout.vue so we can place it
-    // AFTER the translate button (after the theme toggle), matching the
-    // desired ordering: …toggle | translate | github | version.
     socialLinks: [],
 
     footer: {
