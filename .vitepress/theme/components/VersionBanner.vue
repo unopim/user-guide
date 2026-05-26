@@ -1,10 +1,10 @@
 <template>
   <div v-if="banner" class="vp-version-banner" role="alert">
     <div class="vp-version-banner-inner">
-      <p class="vp-version-banner-title">This version is no longer maintained</p>
       <p class="vp-version-banner-body">
-        UnoPim {{ banner.current }} is unmaintained and no longer receives updates or security patches. Please upgrade to the
-        <a :href="banner.latestHref" class="vp-version-banner-link">latest version ({{ banner.latest }})</a>.
+        <strong>Notice:</strong> You are browsing an older UnoPim version. Explore the
+        <a :href="banner.latestHref" class="vp-version-banner-link">latest documentation</a>
+        for updated features.
       </p>
     </div>
   </div>
@@ -43,17 +43,15 @@ const banner = computed(() => {
   color: var(--vp-c-text-1);
 }
 
-.vp-version-banner-title {
-  margin: 0 0 0.35rem;
-  font-weight: 700;
-  font-size: 0.95rem;
-  color: var(--vp-c-warning-1, #b45309);
-}
-
 .vp-version-banner-body {
   margin: 0;
   font-size: 0.9rem;
   line-height: 1.55;
+}
+
+.vp-version-banner-body strong {
+  color: var(--vp-c-warning-1, #b45309);
+  font-weight: 700;
 }
 
 .vp-version-banner-link {
