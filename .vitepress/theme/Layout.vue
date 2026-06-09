@@ -4,6 +4,7 @@ import DefaultTheme from 'vitepress/theme'
 import VersionSelect from './components/VersionSelect.vue'
 import GoogleTranslate from './components/GoogleTranslate.vue'
 import VersionBanner from './components/VersionBanner.vue'
+import PromoBar from './components/PromoBar.vue'
 
 const { Layout } = DefaultTheme
 
@@ -41,6 +42,9 @@ onBeforeUnmount(() => {
 
 <template>
   <Layout>
+    <template #layout-top>
+      <PromoBar />
+    </template>
     <template #doc-before>
       <VersionBanner />
     </template>
