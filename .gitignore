@@ -10,3 +10,4 @@ node_modules/
 # Stray PNGs at repo root (assets belong under src/public/assets/)
 /home-logo.png
 
+.user-guide/
