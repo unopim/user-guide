@@ -17,6 +17,17 @@ export default [
     ]
   },
 
+  {
+    text: 'Digital Product Passport',
+    link: `/${version}/passport/`,
+    collapsed: false,
+    items: [
+      { text: 'Passport Templates', link: `/${version}/passport/templates` },
+      { text: 'Publishing a Passport', link: `/${version}/passport/publishing` },
+      { text: 'Ready-made Templates', link: `/${version}/passport/presets` }
+    ]
+  },
+
   { text: 'Categories', link: `/${version}/category/categories` },
   { text: 'Category Fields', link: `/${version}/categoryField/category-fields` },
 
@@ -74,6 +85,7 @@ export default [
     collapsed: false,
     items: [
       { text: 'Integration', link: `/${version}/configuration/integration` },
+      { text: 'Microsoft SSO', link: `/${version}/configuration/microsoft-sso` },
       { text: 'Webhooks', link: `/${version}/configuration/webhooks` }
     ]
   },
