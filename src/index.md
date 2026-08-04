@@ -9,10 +9,10 @@ hero:
   actions:
     - theme: brand
       text: Get Started →
-      link: /2.1/introduction/
+      link: /3.0/introduction/
     - theme: alt
       text: What’s New?   
-      link: /2.1/releases/
+      link: /3.0/releases/
     - theme: alt
       text: View on GitHub
       link: https://github.com/unopim/unopim
@@ -21,43 +21,63 @@ hero:
     alt: UnoPim
 
 features:
+  - title: Digital Product Passport
+    details: Prove compliance with a public passport page and QR code for every product, built straight from your PIM data.
+    icon: 🛂
+    link: /3.0/passport/
+
+  - title: Product Associations
+    details: Boost every listing with cross-sells, up-sells, and your own custom link types between products.
+    icon: 🔗
+    link: /3.0/associations/
+
+  - title: Product Variants
+    details: Manage a product in every size and color from one place — shared data on the parent, differences on the variants.
+    icon: 🎨
+    link: /3.0/products/variants
+
+  - title: Measurements
+    details: Enter weights and dimensions in any unit and let UnoPim convert them for every channel automatically.
+    icon: 📏
+    link: /3.0/measurements/
+
+  - title: Filters & Saved Views
+    details: Find any product in seconds and save your favorite grid setups to share with the whole team.
+    icon: 🔎
+    link: /3.0/products/filters-and-views
+
   - title: AI Agent & Magic AI
-    details: Use the AI Agent Chat with 32+ PIM tools and Magic AI to automate product data enrichment across 10+ providers.
+    details: Enrich, translate, and manage your catalog in plain language with the AI Agent Chat and Magic AI content generation.
     icon: 🤖
-    link: /2.1/ai-agent/
+    link: /3.0/ai-agent/
 
   - title: Attributes & Family
-    details: Define and assign attributes and families with swatch types and video support to standardize product information.
+    details: Standardize product information with reusable attributes, tidy groups, and one family template per product type.
     icon: 🧩
-    link: /2.1/attribute/
-
-  - title: Dashboard
-    details: Get a comprehensive overview with product statistics, activity charts, completeness scores, and channel readiness.
-    icon: 📊
-    link: /2.1/dashboard/
+    link: /3.0/attribute/
 
   - title: Import & Export
-    details: Import and export catalog data with drag-and-drop upload, real-time tracking, and pause/resume controls.
+    details: Move thousands of products in or out with drag-and-drop uploads, live tracking, and pause/resume controls.
     icon: 🔁
-    link: /2.1/data-transfer/
+    link: /3.0/data-transfer/
 
-  - title: Locales and Currencies
-    details: Set up locales and currencies to support multilingual and multi-currency product catalogs with AI-powered translation.
-    icon: 🌍
-    link: /2.1/settings/locale/
+  - title: Dashboard
+    details: See catalog health at a glance — product counts, activity, completeness scores, and channel readiness.
+    icon: 📊
+    link: /3.0/dashboard/
 
-  - title: Notifications & Webhooks
-    details: Stay informed with in-app notifications and automate workflows with product update webhooks.
+  - title: Multi-Webhooks & Integrations
+    details: Keep your shop and ERP in sync automatically the moment product data changes — no polling, no manual exports.
     icon: 🔔
-    link: /2.1/notifications/
+    link: /3.0/configuration/webhooks
 
-  - title: Products and Categories
-    details: Create and manage product records and category hierarchies with completeness scoring and bulk edit capabilities.
-    icon: 📦
-    link: /2.1/products/
+  - title: Modern Admin Experience
+    details: Work faster in a redesigned admin with dark mode, instant page loads, and a single global save bar.
+    icon: ✨
+    link: /3.0/introduction/admin-essentials
 
-  - title: Users and Roles
-    details: Configure users, roles, and permissions to control access and responsibilities within UnoPim.
+  - title: Users, Roles & SSO
+    details: Give every teammate exactly the access they need, with Microsoft single sign-on for password-free logins.
     icon: 👥
-    link: /2.1/settings/roles/
+    link: /3.0/settings/roles/
 ---

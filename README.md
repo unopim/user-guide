@@ -4,8 +4,9 @@ Source for the official UnoPim documentation, served at [https://docs.unopim.com
 
 ## Versions
 
-- **v2.1** — Current. AI Agent, Magic AI, Dashboard, Notifications, Webhooks, Swatch Attributes, Product Completeness, etc.
-- **v2.0** — Previous stable release.
+- **v3.0** — Current. Digital Product Passports, configurable associations, product variants, measurements, filters & saved views, Microsoft SSO, multi-webhooks, dark mode, System Settings hub.
+- **v2.1** — Previous stable release. AI Agent, Magic AI, Dashboard, Notifications, Webhooks, Swatch Attributes, Product Completeness, etc.
+- **v2.0** — Older release.
 - **v1.0** — Legacy.
 
 ## Project Structure
@@ -17,14 +18,15 @@ user-guide/
 │   ├── sidebars/
 │   │   ├── v1.0.ts               # Per-version sidebar definitions
 │   │   ├── v2.0.ts
-│   │   └── v2.1.ts
+│   │   ├── v2.1.ts
+│   │   └── v3.0.ts
 │   └── theme/
 │       ├── Layout.vue            # Wraps the default theme; adds nav extras
 │       ├── custom.css            # Brand colours, dividers, dropdown styling
 │       ├── index.ts              # Registers theme + custom components
 │       └── components/
 │           ├── GoogleTranslate.vue   # Globe icon → 7-language dropdown
-│           ├── VersionSelect.vue     # v2.1 / v2.0 / v1.0 picker
+│           ├── VersionSelect.vue     # v3.0 / v2.1 / v2.0 / v1.0 picker
 │           ├── ImagePopup.vue        # Click-to-zoom image viewer
 │           ├── FeatureCard.vue       # Home-page feature card
 │           ├── FeatureGrid.vue       # Home-page feature grid
@@ -46,8 +48,10 @@ user-guide/
 │   ├── 2.0/                      # v2.0 documentation
 │   │   └── ...                   # adds: dashboard, releases, notifications, ai-agent, magic-ai, agenticPim
 │   ├── 2.1/                      # v2.1 documentation (same shape as v2.0)
+│   ├── 3.0/                      # v3.0 documentation
+│   │   └── ...                   # adds: associations, measurements, passport, variants, system settings
 │   └── public/
-│       ├── assets/{1.0,2.0,2.1}/ # Screenshots, grouped by version
+│       ├── assets/{1.0,2.0,2.1,3.0}/ # Screenshots, grouped by version
 │       ├── home-logo.png         # Hero illustration
 │       ├── logo.svg              # Light-mode logo
 │       ├── dark_logo.svg         # Dark-mode logo

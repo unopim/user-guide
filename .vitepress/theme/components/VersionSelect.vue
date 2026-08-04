@@ -15,12 +15,13 @@ import { useRoute, useRouter } from 'vitepress'
 import { computed } from 'vue'
 
 const versions = [
+  { label: 'v3.0', value: '3.0' },
   { label: 'v2.1', value: '2.1' },
   { label: 'v2.0', value: '2.0' },
   { label: 'v1.0', value: '1.0' }
 ]
 
-const versionRegex = /^\/(1\.0|2\.0|2\.1)(\/.*)?$/
+const versionRegex = /^\/(1\.0|2\.0|2\.1|3\.0)(\/.*)?$/
 
 // Top-level sections available in each version. Used to redirect a
 // version switch to that version's introduction when the current
@@ -38,7 +39,13 @@ const SECTIONS: Record<string, Set<string>> = {
   '2.1': new Set([
     'agenticPim', 'ai-agent', 'attribute', 'category', 'categoryField',
     'configuration', 'dashboard', 'data-transfer', 'introduction',
-    'magic', 'magic-ai', 'notifications', 'products', 'releases', 'settings'
+    'magic', 'magic-ai', 'notifications', 'passport', 'products', 'releases', 'settings'
+  ]),
+  '3.0': new Set([
+    'agenticPim', 'ai-agent', 'associations', 'attribute', 'category', 'categoryField',
+    'configuration', 'dashboard', 'data-transfer', 'introduction',
+    'magic', 'magic-ai', 'measurements', 'notifications', 'passport', 'products',
+    'releases', 'settings'
   ])
 }
 
@@ -50,7 +57,7 @@ const showSelector = computed(() => route.path !== '/')
 
 const currentVersion = computed(() => {
   const m = route.path.match(versionRegex)
-  return m ? m[1] : '2.1'
+  return m ? m[1] : '3.0'
 })
 
 const restPath = computed(() => {

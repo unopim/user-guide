@@ -14,7 +14,7 @@
 import { useRoute } from 'vitepress'
 import { computed } from 'vue'
 
-const LATEST = '2.1'
+const LATEST = '3.0'
 const UNMAINTAINED = new Set(['1.0', '2.0'])
 const versionRegex = /^\/(1\.0|2\.0|2\.1)(\/.*)?$/
 

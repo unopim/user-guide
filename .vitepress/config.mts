@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 import v10 from './sidebars/v1.0'
 import v20 from './sidebars/v2.0'
 import v21 from './sidebars/v2.1'
+import v30 from './sidebars/v3.0'
 
 export default defineConfig({
   base: '/',
@@ -60,7 +61,8 @@ export default defineConfig({
     sidebar: {
       '/1.0/': v10,
       '/2.0/': v20,
-      '/2.1/': v21
+      '/2.1/': v21,
+      '/3.0/': v30
     },
 
     editLink: {

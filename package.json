@@ -1,6 +1,6 @@
 {
   "name": "unopim-user-guide",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "private": true,
   "scripts": {
     "dev": "vitepress dev",
