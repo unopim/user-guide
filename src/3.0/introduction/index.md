@@ -2,9 +2,17 @@
 
 [UnoPim](https://unopim.com/) is an open-source Product Information Management (PIM) system built on the **Laravel 13** framework and requires **PHP 8.4**. It runs on MySQL 8.0.32+ or PostgreSQL 16, with optional Elasticsearch 8.19 for faster search. It helps businesses organize, manage, and enrich their product information in one central repository.
 
-::: tip Current Version — v3.0.0
+::: tip Guide version — v3.0.0
 This guide covers UnoPim **v3.0.0**, released 31 July 2026. v3.0.0 introduces Digital Product Passports, configurable product associations, product variants with inheritance, a full Measurements module, product-grid filters with saved views, a modernized admin with dark mode and no-reload navigation, Microsoft SSO, multiple webhooks, and a new System Settings hub. See **[What's New](../releases/)** for the full list.
 :::
+
+## MariaDB support in UnoPim 3.1
+
+UnoPim **3.1.0** adds first-class MariaDB support. MariaDB can store the application's catalog, users, configuration, and job data as the primary datastore of an installation, alongside the supported MySQL and PostgreSQL options. The catalog workflows in this guide remain applicable when using MariaDB.
+
+Use a maintained MariaDB LTS series and follow the [3.1 database requirements](https://devdocs.unopim.com/3.1/introduction/requirements.html#supported-database-servers) and [MariaDB installation guide](https://devdocs.unopim.com/3.1/introduction/installation-with-mariadb.html). The Composer template defaults to MySQL and the supplied Docker stack defaults to PostgreSQL; your administrator selects the database during installation.
+
+MariaDB Community Server 10.6 and 10.10 are end of life. The developer guide documents the maintained versions and validation coverage. See the [3.1.0 release notes](https://github.com/unopim/unopim/releases/tag/v3.1.0) for the MariaDB changes.
 
 ## Features
 
