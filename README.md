@@ -109,3 +109,7 @@ npm run preview     # serve the built site
 - [VitePress](https://vitepress.dev/) v1.6.4
 - [Vue.js](https://vuejs.org/) v3.5
 - Node.js v18+
+
+## License
+
+The UnoPim user guide is open-source software licensed under the [MIT License](LICENSE).
